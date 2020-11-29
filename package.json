@@ -1,6 +1,6 @@
 {
   "name": "@robinblomberg/schema",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "index.js",
@@ -29,13 +29,10 @@
   "homepage": "https://github.com/RobinBlomberg/schema#readme",
   "husky": {
     "hooks": {
-      "pre-commit": "lint-staged"
+      "pre-commit": "npm install && npm run test && lint-staged"
     }
   },
   "lint-staged": {
-    "*.{js,ts}": [
-      "npm run test",
-      "cross-env CI=true eslint --fix"
-    ]
+    "*.{js,ts}": "cross-env CI=true eslint --fix"
   }
 }

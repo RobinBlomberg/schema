@@ -45,4 +45,12 @@ export class SchemaValidationError {
 
     return errors;
   }
+
+  /**
+   * @return {string}
+   */
+  toString() {
+    const errors = this.flatten();
+    return errors.map((error) => error.errorMessage).join('\n') + '\n';
+  }
 }
