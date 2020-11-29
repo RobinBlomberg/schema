@@ -1,6 +1,6 @@
 /**
- * @typedef {import('.').Schema} Schema
- * @typedef {import('.').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('..').Schema} Schema
+ * @typedef {import('..').SchemaValidationResult} SchemaValidationResult
  */
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
