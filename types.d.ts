@@ -48,7 +48,7 @@ export function numberLiteral(value: number): NumberLiteralSchema;
 
 export function object(properties: Record<string, Schema>): ObjectSchema;
 
-export function string(): string;
+export function string(): StringSchema;
 
 export function stringLiteral(value: string): StringLiteralSchema;
 
