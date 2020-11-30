@@ -1,11 +1,14 @@
 /**
- * @typedef {import('..').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('../internal').NumberSchema} NumberSchemaImpl
+ * @typedef {import('../internal').SchemaValidationResult} SchemaValidationResult
  */
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
 
 /**
  * A schema that maps to the TypeScript number type.
+ *
+ * @implements {NumberSchemaImpl}
  */
 export class NumberSchema {
   /**

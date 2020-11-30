@@ -1,5 +1,7 @@
 /**
- * @typedef {import('..').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('../internal').SchemaValidationError} SchemaValidationErrorImpl
+ * @typedef {import('../internal').SchemaValidationResult} SchemaValidationResult
+ * @implements {SchemaValidationErrorImpl}
  */
 export class SchemaValidationError {
   /**

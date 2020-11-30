@@ -1,12 +1,15 @@
 /**
- * @typedef {import('..').Schema} Schema
- * @typedef {import('..').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('../internal').ArraySchema} ArraySchemaImpl
+ * @typedef {import('../internal').Schema} Schema
+ * @typedef {import('../internal').SchemaValidationResult} SchemaValidationResult
  */
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
 
 /**
  * A schema that maps to the TypeScript Array type.
+ *
+ * @implements {ArraySchemaImpl}
  */
 export class ArraySchema {
   /**

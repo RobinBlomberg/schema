@@ -1,5 +1,5 @@
 /**
- * @typedef {import('..').Schema} Schema
+ * @typedef {import('../internal').Schema} Schema
  */
 import { infer } from './infer.js';
 
