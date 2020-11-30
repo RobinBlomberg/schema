@@ -52,7 +52,7 @@ export class ArraySchema {
 
   /**
    * @param {*} value
-   * @param {string[]} path
+   * @param {string[]} [path]
    * @return {SchemaValidationResult}
    */
   validate(value, path = []) {

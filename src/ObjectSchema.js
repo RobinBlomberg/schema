@@ -53,7 +53,7 @@ export class ObjectSchema {
 
   /**
    * @param {*} value
-   * @param {string[]} path
+   * @param {string[]} [path]
    * @return {SchemaValidationResult}
    */
   validate(value, path = []) {

@@ -17,7 +17,7 @@ export class ObjectSchema extends Schema {
 
 export class Schema {
   stringify(): string;
-  validate(value: any, path: string[]): SchemaValidationResult;
+  validate(value: any, path?: string[]): SchemaValidationResult;
 }
 
 export class StringLiteralSchema {
