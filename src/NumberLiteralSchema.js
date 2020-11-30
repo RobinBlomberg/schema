@@ -1,6 +1,6 @@
 /**
- * @typedef {import('../internal').NumberLiteralSchema} NumberLiteralSchemaImpl
- * @typedef {import('../internal').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('../types').NumberLiteralSchema} NumberLiteralSchemaImpl
+ * @typedef {import('../types').SchemaValidationResult} SchemaValidationResult
  */
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';

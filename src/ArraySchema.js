@@ -1,7 +1,7 @@
 /**
- * @typedef {import('../internal').ArraySchema} ArraySchemaImpl
- * @typedef {import('../internal').Schema} Schema
- * @typedef {import('../internal').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('../types').ArraySchema} ArraySchemaImpl
+ * @typedef {import('../types').Schema} Schema
+ * @typedef {import('../types').SchemaValidationResult} SchemaValidationResult
  */
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
