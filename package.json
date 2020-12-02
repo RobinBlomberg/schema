@@ -1,12 +1,12 @@
 {
   "name": "@robinblomberg/schema",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "author": "Robin Blomberg",
   "type": "module",
   "main": "index.js",
   "types": "dist/index.d.ts",
   "devDependencies": {
-    "@robinblomberg/eslint-config-robinblomberg": "^0.2.14",
+    "@robinblomberg/eslint-config-robinblomberg": "^0.2.15",
     "concurrently": "^5.3.0",
     "cross-env": "^7.0.3",
     "eslint": "^7.14.0",
