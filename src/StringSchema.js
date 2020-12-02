@@ -1,6 +1,6 @@
 /**
- * @typedef {import('../types').StringSchema} StringSchemaImpl
- * @typedef {import('../types').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('./types').Schema} Schema
+ * @typedef {import('./types').SchemaValidationResult} SchemaValidationResult
  */
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
@@ -8,7 +8,7 @@ import * as Errors from './errors.js';
 /**
  * A schema that maps to the TypeScript string type.
  *
- * @implements {StringSchemaImpl}
+ * @implements {Schema}
  */
 export class StringSchema {
   /**

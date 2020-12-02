@@ -1,7 +1,6 @@
 /**
- * @typedef {import('../types').ArraySchema} ArraySchemaImpl
- * @typedef {import('../types').Schema} Schema
- * @typedef {import('../types').SchemaValidationResult} SchemaValidationResult
+ * @typedef {import('./types').Schema} Schema
+ * @typedef {import('./types').SchemaValidationResult} SchemaValidationResult
  */
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
@@ -9,7 +8,7 @@ import * as Errors from './errors.js';
 /**
  * A schema that maps to the TypeScript Array type.
  *
- * @implements {ArraySchemaImpl}
+ * @implements {Schema}
  */
 export class ArraySchema {
   /**

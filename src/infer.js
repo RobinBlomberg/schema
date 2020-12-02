@@ -1,5 +1,5 @@
 /**
- * @typedef {import('../types').Schema} Schema
+ * @typedef {import('./types').Schema} Schema
  */
 import { ArraySchema } from './ArraySchema.js';
 import { NumberLiteralSchema } from './NumberLiteralSchema.js';
