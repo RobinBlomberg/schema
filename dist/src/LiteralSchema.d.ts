@@ -1,17 +1,18 @@
 /**
- * A schema that maps to the TypeScript string literal type.
+ * A schema that maps to a TypeScript literal type.
  *
+ * @template T
  * @implements {Schema}
  */
-export class StringLiteralSchema implements Schema {
+export class LiteralSchema<T> implements Schema {
     /**
-     * @param {string} value
+     * @param {T} value
      */
-    constructor(value: string);
+    constructor(value: T);
     /**
-     * @type {string}
+     * @type {T}
      */
-    value: string;
+    value: T;
     /**
      * @return {string}
      */

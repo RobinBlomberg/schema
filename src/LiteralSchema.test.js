@@ -1,10 +1,10 @@
 import * as Assert from 'assert';
+import { LiteralSchema } from './LiteralSchema.js';
 import { SchemaValidationError } from './SchemaValidationError.js';
-import { StringLiteralSchema } from './StringLiteralSchema.js';
 import * as Errors from './errors.js';
 
-export const testStringLiteralSchema = () => {
-  const schema = new StringLiteralSchema('foo');
+export const testLiteralSchema = () => {
+  const schema = new LiteralSchema('foo');
 
   Assert.strictEqual(
     schema.validate('foo'),

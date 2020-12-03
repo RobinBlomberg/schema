@@ -6,18 +6,19 @@ import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
 
 /**
- * A schema that maps to the TypeScript string literal type.
+ * A schema that maps to a TypeScript literal type.
  *
+ * @template T
  * @implements {Schema}
  */
-export class StringLiteralSchema {
+export class LiteralSchema {
   /**
-   * @type {string}
+   * @type {T}
    */
   value;
 
   /**
-   * @param {string} value
+   * @param {T} value
    */
   constructor(value) {
     this.value = value;
@@ -27,7 +28,7 @@ export class StringLiteralSchema {
    * @return {string}
    */
   stringify() {
-    return JSON.stringify(this.value);
+    return String(this.value);
   }
 
   /**

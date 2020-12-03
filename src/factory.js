@@ -1,12 +1,32 @@
 /**
+ * @typedef {import('./types').PrimitiveType} PrimitiveType
  * @typedef {import('./types').Schema} Schema
  */
 import { ArraySchema } from './ArraySchema.js';
-import { NumberLiteralSchema } from './NumberLiteralSchema.js';
-import { NumberSchema } from './NumberSchema.js';
+import { LiteralSchema } from './LiteralSchema.js';
 import { ObjectSchema } from './ObjectSchema.js';
-import { StringLiteralSchema } from './StringLiteralSchema.js';
-import { StringSchema } from './StringSchema.js';
+import { PrimitiveSchema } from './PrimitiveSchema.js';
+
+/**
+ * @return {PrimitiveSchema}
+ */
+const _function = () => {
+  return new PrimitiveSchema('function');
+};
+
+/**
+ * @return {LiteralSchema<null>}
+ */
+const _null = () => {
+  return new LiteralSchema(null);
+};
+
+/**
+ * @return {LiteralSchema<undefined>}
+ */
+const _undefined = () => {
+  return new LiteralSchema(undefined);
+};
 
 /**
  * @param {Schema | Schema[]} items
@@ -17,18 +37,36 @@ export const array = (items) => {
 };
 
 /**
- * @return {NumberSchema}
+ * @return {PrimitiveSchema}
  */
-export const number = () => {
-  return new NumberSchema();
+export const bigint = () => {
+  return new PrimitiveSchema('bigint');
 };
 
 /**
- * @param {number} value
- * @return {NumberLiteralSchema}
+ * @return {PrimitiveSchema}
  */
-export const numberLiteral = (value) => {
-  return new NumberLiteralSchema(value);
+export const boolean = () => {
+  return new PrimitiveSchema('boolean');
+};
+
+export { _function as function };
+
+/**
+ * @param {string} value
+ * @return {LiteralSchema<any>}
+ */
+export const literal = (value) => {
+  return new LiteralSchema(value);
+};
+
+export { _null as null };
+
+/**
+ * @return {PrimitiveSchema}
+ */
+export const number = () => {
+  return new PrimitiveSchema('number');
 };
 
 /**
@@ -40,16 +78,25 @@ export const object = (properties) => {
 };
 
 /**
- * @return {StringSchema}
+ * @return {PrimitiveSchema}
  */
 export const string = () => {
-  return new StringSchema();
+  return new PrimitiveSchema('string');
 };
 
 /**
- * @param {string} value
- * @return {StringLiteralSchema}
+ * @return {PrimitiveSchema}
  */
-export const stringLiteral = (value) => {
-  return new StringLiteralSchema(value);
+export const symbol = () => {
+  return new PrimitiveSchema('symbol');
 };
+
+/**
+ * @param {PrimitiveType} primitiveType
+ * @return {PrimitiveSchema}
+ */
+export const type = (primitiveType) => {
+  return new PrimitiveSchema(primitiveType);
+};
+
+export { _undefined as undefined };

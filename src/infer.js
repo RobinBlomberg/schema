@@ -2,9 +2,8 @@
  * @typedef {import('./types').Schema} Schema
  */
 import { ArraySchema } from './ArraySchema.js';
-import { NumberLiteralSchema } from './NumberLiteralSchema.js';
+import { LiteralSchema } from './LiteralSchema.js';
 import { ObjectSchema } from './ObjectSchema.js';
-import { StringLiteralSchema } from './StringLiteralSchema.js';
 
 /**
  * @param {*} value
@@ -27,12 +26,5 @@ export const infer = (value) => {
     return new ObjectSchema(properties);
   }
 
-  switch (typeof value) {
-    case 'number':
-      return new NumberLiteralSchema(value);
-    case 'string':
-      return new StringLiteralSchema(value);
-    default:
-      throw new TypeError(`Failed to infer value: Unexpected value ${JSON.stringify(value)}`);
-  }
+  return new LiteralSchema(value);
 };

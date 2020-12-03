@@ -1,19 +1,19 @@
 import * as Assert from 'assert';
-import { NumberSchema } from './NumberSchema.js';
+import { PrimitiveSchema } from './PrimitiveSchema.js';
 import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
 
-export const testNumberSchema = () => {
-  const schema = new NumberSchema();
+export const testPrimitiveSchema = () => {
+  const schema = new PrimitiveSchema('function');
 
   Assert.strictEqual(
-    schema.validate(42),
+    schema.validate(() => {}),
     null
   );
   Assert.deepStrictEqual(
-    schema.validate('foo'),
+    schema.validate(42),
     new SchemaValidationError(
-      Errors.TYPE_NOT_ASSIGNABLE('foo', schema),
+      Errors.TYPE_NOT_ASSIGNABLE(42, schema),
       [],
       null
     )

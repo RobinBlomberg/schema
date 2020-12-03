@@ -1,12 +1,12 @@
 import * as Assert from 'assert';
 import { ArraySchema } from './ArraySchema.js';
+import { PrimitiveSchema } from './PrimitiveSchema.js';
 import { SchemaValidationError } from './SchemaValidationError.js';
-import { StringSchema } from './StringSchema.js';
 import * as Errors from './errors.js';
 
 export const testSchemaValidationError = () => {
-  const stringSchema = new StringSchema();
-  const arraySchema = new ArraySchema(new StringSchema());
+  const stringSchema = new PrimitiveSchema('string');
+  const arraySchema = new ArraySchema(stringSchema);
   const error = arraySchema.validate([42, 43]);
 
   Assert.deepStrictEqual(

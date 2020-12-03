@@ -1,13 +1,13 @@
 import * as Assert from 'assert';
 import { ArraySchema } from './ArraySchema.js';
+import { LiteralSchema } from './LiteralSchema.js';
+import { PrimitiveSchema } from './PrimitiveSchema.js';
 import { SchemaValidationError } from './SchemaValidationError.js';
-import { StringLiteralSchema } from './StringLiteralSchema.js';
-import { StringSchema } from './StringSchema.js';
 import * as Errors from './errors.js';
 
 export const testArraySchema = () => {
-  const stringSchema = new StringSchema();
-  const arraySchema = new ArraySchema(new StringSchema());
+  const stringSchema = new PrimitiveSchema('string');
+  const arraySchema = new ArraySchema(stringSchema);
 
   Assert.deepStrictEqual(
     arraySchema.validate(42),
@@ -35,9 +35,9 @@ export const testArraySchema = () => {
     )
   );
 
-  const stringLiteral1Schema = new StringLiteralSchema('bar');
+  const stringLiteral1Schema = new LiteralSchema('bar');
   const tupleSchema = new ArraySchema([
-    new StringLiteralSchema('foo'),
+    new LiteralSchema('foo'),
     stringLiteral1Schema
   ]);
 

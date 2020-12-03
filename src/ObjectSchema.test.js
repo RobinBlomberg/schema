@@ -1,11 +1,11 @@
 import * as Assert from 'assert';
 import { ObjectSchema } from './ObjectSchema.js';
+import { PrimitiveSchema } from './PrimitiveSchema.js';
 import { SchemaValidationError } from './SchemaValidationError.js';
-import { StringSchema } from './StringSchema.js';
 import * as Errors from './errors.js';
 
 export const testObjectSchema = () => {
-  const stringSchema = new StringSchema();
+  const stringSchema = new PrimitiveSchema('string');
   const objectSchema = new ObjectSchema({
     name: stringSchema
   });

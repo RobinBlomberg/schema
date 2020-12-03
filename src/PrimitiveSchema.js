@@ -1,4 +1,5 @@
 /**
+ * @typedef {import('./types.js').PrimitiveType} PrimitiveType
  * @typedef {import('./types').Schema} Schema
  * @typedef {import('./types').SchemaValidationResult} SchemaValidationResult
  */
@@ -6,28 +7,26 @@ import { SchemaValidationError } from './SchemaValidationError.js';
 import * as Errors from './errors.js';
 
 /**
- * A schema that maps to the TypeScript number literal type.
+ * A schema that maps to a TypeScript primitive type.
  *
  * @implements {Schema}
  */
-export class NumberLiteralSchema {
-  /**
-   * @type {number}
-   */
-  value;
+export class PrimitiveSchema {
+  /** @type {PrimitiveType} */
+  #type;
 
   /**
-   * @param {number} value
+   * @param {PrimitiveType} type
    */
-  constructor(value) {
-    this.value = value;
+  constructor(type) {
+    this.#type = type;
   }
 
   /**
    * @return {string}
    */
   stringify() {
-    return String(this.value);
+    return this.#type;
   }
 
   /**
@@ -36,7 +35,8 @@ export class NumberLiteralSchema {
    * @return {SchemaValidationResult}
    */
   validate(value, path = []) {
-    return value === this.value
+    const type = typeof value;
+    return type === this.#type
       ? null
       : new SchemaValidationError(
         Errors.TYPE_NOT_ASSIGNABLE(value, this),
