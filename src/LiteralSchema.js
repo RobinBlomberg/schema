@@ -28,7 +28,7 @@ export class LiteralSchema {
    * @return {string}
    */
   stringify() {
-    return String(this.value);
+    return JSON.stringify(this.value);
   }
 
   /**
