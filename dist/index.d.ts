@@ -1,3 +1,3 @@
-export * from "./src/factory.js";
-export { infer } from "./src/infer.js";
-export type Schema = import("./src/types.js").Schema;
+export * from "./factory.js";
+export { infer } from "./infer.js";
+export type Schema = import("./types.js").Schema;
