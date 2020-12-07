@@ -1,1 +1,0 @@
-export function testFactory(): void;
